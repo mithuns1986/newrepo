@@ -1,0 +1,80 @@
+java -version
+
+java version "1.7.0_171" 
+
+--> if we want new java version then we can install using wget
+
+mkdir java8
+cd java8
+wget <jdkURL>
+yum install <downloaded java>
+
+--> Install tomcat using wget or yum 
+
+http://apachemirror.wuchna.com/tomcat/tomcat-8/v8.5.50/bin/apache-tomcat-8.5.50.tar.gz
+
+
+
+java -version
+  
+  931  yum update
+  
+  936  yum install java-1.7.0-openjdk-devel -y
+  937  cd /usr/lib/jvm/jre
+  938  ls -l
+  
+  940  groupadd tomcat
+  941  useradd -M -s /bin/nologin -g tomcat -d /opt/tomcat tomcat
+  942  cd /opt/tomcat
+  943  wget http://apachemirror.wuchna.com/tomcat/tomcat-8/v8.5.50/bin/apache-tomcat-8.5.50.tar.gz
+  944  mkdir /opt/tomcat
+  945  tar xvf apache-tomcat-8*tar.gz -C /opt/tomcat --strip-components=1
+  946  cd /opt/tomcat/
+  947  chgrp -R tomcat /opt/tomcat
+  948  chmod -R g+r conf
+  949  chmod g+x conf
+  950  chown -R tomcat webapps/ work/ temp/ logs/
+  
+  957  curl http://localhost:8080
+ 
+  
+  970  echo $CATALINA_HOME
+  971  export CATALINA_HOME=/opt/tomcat
+  972  set | grep CATALINA
+  973  /opt/tomcat/bin/startup.sh
+  974  curl localhost:8080
+  975  ps -ef|grep 8080
+  976  ps -ef|grep tomcat
+  977  /opt/tomcat/bin/shutdown.sh
+  978  ps -ef|grep tomcat
+  979  /opt/tomcat/bin/startup.sh
+  980  locata server.xml
+  981  locate server.xml
+  982  locate *.xml
+  983  curl http://10.161.12.20:8080
+  984  cd /opt/tomcat/
+  985  ls -l
+  986  cd conf/
+  987  ls -l
+  988  vi server.xml
+  989  cd ..
+  990  ls -l
+  991  cd ..
+  992  ls -l
+  993  tomcat -version
+  994  cd /opt/tomcat/webapps/
+  995  ls -l
+  996  mkdir samplewar
+  997  cd samplewar/
+  998  wget https://tomcat.apache.org/tomcat-7.0-doc/appdev/sample/sample.war
+  999  jar -xvf sample.war
+ 1000  exit
+ 1001  /opt/tomcat/bin/shutdown.sh
+ 1002  /opt/tomcat/bin/startup.sh
+ 1003  cd /opt/tomcat/webapps/
+ 1004  cd samplewar/
+ 1005  history
+ 1006  ls -l
+ 1007  vi index.html
+ 1008  tar -cvf mithun.war *
+ 1009  ls -l
